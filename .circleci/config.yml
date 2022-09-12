@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@2.1.0
+
+jobs:
+  ci:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          name: run-python
+          command: python hello-world.py
+        
+workflows:
+  ci:
+    jobs: 
+      - ci
